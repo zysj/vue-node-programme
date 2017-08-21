@@ -57,24 +57,26 @@
 			<div class="form-group col-sm-12">
 				<label class="col-sm-2 text-center">Simple Info</label>
 				<div class="edit-food-wrap col-sm-8">
-					<textarea id="edit-food" style="width: 600px;height: 200px" v-model="text" ref="info">
-					</textarea>
+					<!-- <textarea id="edit-food" style="width: 600px;height: 200px" v-model="text" ref="info">
+					</textarea> -->
+					<vue-editor ref="info"></vue-editor>
 					<!-- <button v-on:click="show()">展示</button> -->
 				</div>
 			</div>
 		</div>
 		<h3 class="h3-center">Steps for Food Made</h3>
-		<div class="row" v-for="(step,index) in steps" v-show="step.CanEdit"><!-- v-for="(step,index) in steps" -->
+		<div class="row" v-for="(step,index) in steps"><!-- v-for="(step,index) in steps" -->
 			<div class="form-group col-sm-12">
 				<label class="col-sm-2 text-center">Step {{index+1}}</label>
 				<div class="edit-food-wrap col-sm-7">
-					<textarea :id="step.id" style="width: 100%;height: 150px">
-					</textarea>
+					<!-- <textarea :id="step.id" style="width: 100%;height: 150px">
+					</textarea> -->
+					<vue-editor :ref="'editor'+index" :bindId="index"></vue-editor>
 					<!-- <button v-on:click="show()">展示</button> -->
 				</div>
 				<div class="col-sm-3">
 					<div class="col-sm-8">
-						<div is='upload-file' :isMultiple="isMultiple" :uploadIndex="index" ref="upload"></div>
+						<div is='upload-file' :isMultiple="isMultiple" :uploadIndex="index" :ref="'upload'+index"></div>
 					</div>
 				</div>
 				<div class="col-sm-3 delete-btn" @click="removeStep(step,index,upload)"><span><i class="icon-trash"></i>删除</span></div>

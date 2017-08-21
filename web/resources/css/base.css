@@ -2,7 +2,7 @@
 @import url('../lib/bootstrap/css/bootstrap.css');
 @import url('../lib/Font-Awesome/css/font-awesome.css');
 @import url('../lib/keen-ui/keen-ui.min.css');
-/* @import url('../../../node_modules/wangeditor/dist/css/wangEditor.css'); */
+@import url('../lib/umeditor/themes/default/css/umeditor.min.css');
 
 #vue-app{
 	position: relative;

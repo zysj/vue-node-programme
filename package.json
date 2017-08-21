@@ -90,7 +90,6 @@
     "vue2-loading-bar": "0.0.1",
     "vuetable-2": "^1.6.5",
     "vuex": "^2.1.2",
-    "wangeditor": "^2.1.22",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.16.3",
     "webpack-hot-middleware": "^2.18.0",
