@@ -1,0 +1,65 @@
+<div class="login-body">
+	<!-- header start -->
+    		<nav class="navbar navbar-default head_box">
+					<div class="container">
+						<div class="navbar-header" style="padding-right: 40px;margin-left: -15px;width: 200px;">
+							  <img alt="" src="web/resources/img/logo0_1.jpg" height="40" style="margin-top: 5px;">
+					  </div>
+				  </div> 
+				</nav><!-- header end -->
+
+        <!-- login-area start -->
+		    <div class="login-area" id="l-login">
+		      <div class="login-con">
+		        <div class="login-form fr">
+		          <div class="login-form-title">
+		              <img src="web/resources/img/login/user-icon.png" alt="" class="fl">
+		              <span class="fl">用户登录</span>
+		              <!-- <a class="fr">免费注册</a> -->
+		          </div>
+		          <div class="login-form-con">
+		            <form class="form-horizontal">
+		                <label>
+		                    <input type="text" v-model="obj.userName"  required placeholder="账号" name="loginName" class="login-name">
+		                    <img src="web/resources/img/login/user-icon2.png">
+		                </label>
+		                <label>
+		                    <input type="password" v-model="obj.password"  required placeholder="密码">
+		                    <img src="web/resources/img/login/psw-icon.png">
+		                </label>
+		                <label>
+		                	<button type="submit" style="width: 240px;"  v-disabled="isLogining" :class="submitClass"   @click="login()">
+		                	<span v-if="!isLogining">登录</span>
+		                	<span v-if="isLogining"><i class="fa fa-spinner fa-spin"></i>&nbsp;登录中...</span>
+		                	</button>
+		                </label>
+		                <!-- <div class="login-form-tex">
+		                  <span class="grey fl">没有账号？<a class="black" href="./register" >免费注册</a></span>
+		                  <span class="grey fr"><a href="./resetPassword">忘记了密码？</a></span>
+		                </div> -->
+		                <div class="checkbox" style="margin-left: 29px;">
+			                <label>
+			                    <input type="checkbox" value=""  v-model="obj.rememberMe">
+			                    <i class="input-helper"></i>
+			                                                       记住我
+			                </label>
+			             </div>
+		            </form>
+		          </div>
+		        </div>
+		      </div>
+		    </div><!-- login-area end -->
+		    
+		    <!-- footer start -->
+		    <div class="footer">
+					<!-- <div class="footer-nav">
+						<a ui-sref="guide.create-bill" target="_blank">新手入门</a><span>&nbsp;|</span>
+				    	<a ui-sref="guide.about" target="_blank">关于简单汇</a><span>&nbsp;|</span>
+				   		<a ui-sref="guide.contact-us" target="_blank">联系我们</a>
+					</div> -->
+					<div class="copyright">
+						<span>TCL集团股份有限公司版权所有 粤ICP050400863</span><br/>
+						<span>&copy;2010-2011 TCL CORPORATION All Rights Reserved.</span>
+					</div>
+				</div><!-- footer end -->
+</div>

@@ -1,0 +1,27 @@
+<div class="file-upload-wrap com-container">
+	<div class="upload-file" v-for="(file,index) in files">
+		<img :src="file.newUrl" @click="showBigImg(file)" />
+		<i class="icon-remove-sign" @click="remove(file,index)"></i>
+	</div>
+	<!-- <div class="upload-file">
+		<img src="/web/resources/img/rm.png"/>
+		<i class="icon-remove-sign"></i>
+	</div>
+	<div class="upload-file">
+		<img src="/web/resources/img/rm.png"/>
+		<i class="icon-remove-sign"></i>
+	</div>
+	<div class="upload-file">
+		<img src="/web/resources/img/rm.png"/>
+		<i class="icon-remove-sign"></i>
+	</div>
+	<div class="upload-file">
+		<img src="/web/resources/img/rm.png"/>
+		<i class="icon-remove-sign"></i>
+	</div>-->
+	<div class="add-img-wrap" v-show=" !(!multiple && files.length ==1)">
+		<vue-file-upload class="add-img" url="" v-ref:upload :events="events" :label="label" :icon="icon" :filters="filters" :url="url" :autoUpload="autoUpload" :requestOptions="requestOptions" :multiple="multiple"></vue-file-upload>
+	</div>
+	<div class="upload-dropback" v-show="isUploading"><i class="icon-spinner"></i></div>
+	<div class="big-img-backderop" @click="hideBigImg" v-show="isShowBigImg"><img :src="bigImgUrl"/></div>
+</div>

@@ -1,0 +1,28 @@
+<div class="platform-container">
+	<div class="sidebar-left-wrap">
+		<div class="sidebar-left">
+			<p class="search-label">Search</p>
+			<div class="search-input-group">
+				<input class="search-input" placeholder="Search" />
+				<span><i class="icon-search"></i></span>
+			</div>
+			<div class="search-sorting">
+			<span class="sorting-label">Sorting</span>
+			<span class="sorting-desc">desc</span>
+			<span class="sorting-asc">asc</span>
+			</div>
+			<ul class="sidebar-menu">
+				<li><i class="icon-calendar"></i><span>date</span></li>
+				<li><i class="icon-eye-open"></i><span>views</span></li>
+				<li><i class="icon-heart"></i><span>favourite</span></li>
+				<li><i class="icon-beer"></i><span>吃藕丑</span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="query-tip com-container">
+		<h3>Photos sorted by trending</h3>
+
+		<p>Sorted in descending order</p>
+	</div>
+	<div is="rank-flow" v-bind:flow-array="foods"></div>
+</div>

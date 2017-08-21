@@ -1,0 +1,13 @@
+<div class="slide-imgs-box" v-anim-img="slideObj">
+	<div class="slide-imgs-container">
+		<ul class="slide-imgs">
+			<li v-for="item in slideArray"><img :src="item.slideImg"/><p>{{item.slideText}}</p></li>
+		</ul>
+	</div>
+	<div class="slide-small-wrap">
+		<ul class="slide-small-imgs">
+			<li v-for="item in slideArray"><img :src="item.slideImg"/></li>
+			<div class="img-border"></div>
+		</ul>
+	</div>
+<div>

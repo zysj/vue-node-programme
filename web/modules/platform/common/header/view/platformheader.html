@@ -1,0 +1,54 @@
+<header id="platform-head">
+	<nav class="navbar navbar-default navbar-fixed-top head_box text-center">
+		<div class="container text-center">
+			<div class=hd-icon><img src="/web/resources/img/default.png"/></div>
+			<ul class="hd-nav">
+				<li><router-link tag="p" to="/platform">首页</router-link></li>
+				<li><router-link tag="p" to="/platform/foods">Food</router-link>
+					<ul class="arrow-icon">
+						<li><p>Go to foods</p></li>
+						<li><p>Go to foods</p></li>
+						<li><p>Go to foods</p></li>
+					</ul>
+				</li>
+				<li><router-link tag="p" to="/platform/foodEdit">demo</router-link></li>
+				<li><router-link tag="p" to="/platform/article-list">Article</router-link></li>
+				<li><router-link tag="p" to="/platform/foodEdit">About us</router-link></li>
+			</ul>
+			<div class="hd-user" v-if="user">
+				<img src="/web/resources/img/default.png"/>
+				<div class="hd-user-info">
+					<p>{{user.loginName}}</p>
+				</div>
+				<ul class="user-power-list">
+					<li class="arrow-icon">个人中心</li>
+					<li>设置</li>
+					<li @click="logout">退出</li>
+				</ul>
+			</div>
+			<!-- <router-link tag="span" to="/platform/login" class="user-signin"><span @click="openModal('modal4')">SignIn</span></router-link>
+			<router-link tag="span" to="/platform/register" class="user-regist">Regist</router-link> -->
+			<span class="user-signin" v-if="!user" @click="openModal('SignIn')">SignIn</span>
+			<span class="user-regist" v-if="!user" @click="openModal('Register')">Regist</span>
+			<ui-modal ref="modal" :title="regisOrLogin" @close="cancel">
+				<!-- <div slot="header">
+					{{regisOrLogin}}
+				</div> -->
+				<div class="text-left">
+					<ui-textbox :error="nerrorMsg" help="Write your favourite name for your LoginName" label="Login Name"
+					   name="login_name" maxlength="20" enforceMaxlength=true required ="true" placeholder="Enter your login name" autofocus=true
+			                :invalid="autocomplete4Touched && nameError" @touch="autocomplete4Touched = true" ref="loginname" v-model="loginName" @input="Valid(loginName,'loginName')"
+			            ></ui-textbox>
+			            <ui-textbox :error="perrorMsg" help="Write your Password" label="Password" name="password" type="password"
+			                maxlength="20" enforceMaxlength=true required="true" placeholder="Enter your password"  :invalid="autocomplete4Touched && passdError" @touch="autocomplete4Touched = true" ref="passd" v-model="password" @input="Valid(password,'password')"
+			            ></ui-textbox>
+				</div>
+				<div slot="footer">
+					<ui-button v-if="regisOrLogin=='Register'" :disabled="nameError || passdError" color="orange" @click="register">Regist</ui-button>
+					<ui-button v-if="regisOrLogin=='SignIn'" :disabled="nameError || passdError" color="orange" @click="login">SignIn</ui-button>
+					<ui-button type="secondary" @click="cancel('modal')">Cancel</ui-button>
+				</div>
+			</ui-modal>
+		</div>
+	</nav>
+</header>

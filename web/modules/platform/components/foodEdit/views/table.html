@@ -1,0 +1,32 @@
+<table>
+	<thead>
+		<tr>
+			<td v-for:c in columns>{{c}}</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr v-for:c in tableData>
+			<td>{{c.id}}</td>
+			<td>{{c.name}}</td>
+			<td>{{c.age}}</td>
+		</tr>
+	</tbody>
+</table>
+<!-- <div class="table-wrap">
+		<div class="table-scroll" v-table-split="dataList">
+			<table>
+				<colgroup>
+					<col width="110"/>
+					<col width="100" />
+				</colgroup>
+				<thead>
+					<td>用户名称<span><i class="icon-sort"></i><i class="icon-caret-up"></i><i class="icon-caret-down"></i></span></td>
+					<td>用户角色<span><i class="icon-sort"></i><i class="icon-caret-up"></i><i class="icon-caret-down"></i></ispan></td>
+				</thead>
+				<tr v-for="c in dataList">
+					<td class="" data-title="用户名称" data-sort="user_name">{{c.userName}}</td>
+					<td class="" data-title="用户角色" data-sort="user_role">{{c.userRole}}</td>
+				</tr>
+			</table>
+		</div>
+	</div> -->

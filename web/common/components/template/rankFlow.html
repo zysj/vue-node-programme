@@ -1,0 +1,9 @@
+<div class="rank-flow-box " v-flow-rank="rankFlowObj">
+	<div class="rank-flow" v-for="item in flowArray">
+		<div class="backdrop">
+			<p>{{item.foodText}}</p>
+			<div class="cmd-food-data"><span><i class="icon-heart"></i></span>(11)<span><i class="icon-eye-open"></i></span>(22)</div>
+		</div>
+		<img class="rank-flow-img" :src="item.foodImg"/>
+	</div>
+</div>
