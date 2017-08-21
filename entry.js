@@ -9,7 +9,7 @@ import comVue from 'web/modules/commonVue'
 import KeenUI from 'keen-ui'
 
 Vue.use(VueRouter);
-Vue.use(VueResource);
+Vue.use(VueResource); 
 Vue.use(Vuex);
 Vue.use(KeenUI);
 
@@ -98,20 +98,3 @@ function loadEnd(){
 	},0);
 };
 
-
-
-/*//xhr练习成果---能够查询用户名是否重复，返回一个json对象，请求体是一个json对象字符串
-var xhr = new XMLHttpRequest();
-var url = 'http://localhost:3000/checkName';
-xhr.open('POST',url);
-xhr.setRequestHeader('Content-Type','application/json');
-
-xhr.send(JSON.stringify({loginName:'aaaaaaaa'}));
-new Promise(function(reso,rej){
-	xhr.onload = function(){
-		reso(xhr.response);
-	}	
-}).then(function(ret){
-	console.log(ret);
-})
- */
