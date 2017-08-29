@@ -22,7 +22,7 @@ var port = location.port;
 
 var contextPath = pathname.substring(0,pathname.substr(1).indexOf('/')+1);
 
-var basePath="http://localhost:8080/jd2.0";
+var basePath="http://localhost:8080/node";
 
 function getBasePath(){
 	return location.origin?origin:protocol+"//"+host+contextPath;

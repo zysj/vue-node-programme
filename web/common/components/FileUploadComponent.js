@@ -9,7 +9,7 @@ var fileUpload = Vue.component('upload-file',{
 	props:['isMultiple','uploadIndex'],
 	data:function(){
 		return {
-			url:'upload/uploadImg',     //上传文件的url地址
+			url:'/node/upload/uploadImg',     //上传文件的url地址
 			label:'',					     //上传按钮的文字
 			max:'',					     //上传数量的最大值
 			maxSize:1024*1024,	     //上传文件大小的最大值
@@ -117,7 +117,7 @@ var fileUpload = Vue.component('upload-file',{
 	methods:{
 		remove(file,index){
 			this.files.splice(index,1);
-			this.$http.post("http://localhost:3000/upload/delfile",{filePath:file.newName}).then(function(ret){
+			this.$http.post("http://localhost:3000/node/upload/delfile",{filePath:file.newName}).then(function(ret){
 				console.log(ret);
 			});
 		},

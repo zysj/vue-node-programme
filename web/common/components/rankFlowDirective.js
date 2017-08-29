@@ -6,10 +6,11 @@ Vue.component("rankFlow",{
 	props:["flowArray"],
 	data:function(){
 		return {
-			rankFlowObj:{
-				rankFlow:this.flowArray,
-			}
 		};
+	},
+	mounted(){
+		var flowobj = new flow();
+		flowobj.init(this.$refs.rankWrap,this.flowArray);
 	}
 });
 
@@ -27,7 +28,7 @@ Vue.directive("flowRank",{
 		//init(el,binding);
 	},
 });
-var flowobj = new flow();
+
 function flow(){
 	this.len,				//每行子元素数量
 	this.oldlen,			//每行子元素数量旧值
@@ -42,26 +43,26 @@ function flow(){
 	this.minspace = 10,			//子元素之间的上间隔
 	this.isLoad = false;			//控制首次加载时不会运行两次initFlow函数。
 }
-flow.prototype.init = function(el,binding){
+flow.prototype.init = function(el,array){
 	var that = this;
 	this.$el = $(el);
-	this.alen = binding.value.rankFlow.length;
+	this.alen = array.length;
 	this.children = this.$el.children();
 	this.cwidth = this.children.outerWidth();
 	this.imgs = this.$el.find('img');
 	if(this.imgs.length >0){
 		window.onload = function(){
-			that.initFlow(binding);
+			that.initFlow(array);
 			that.isLoad = true;
 		}
-		this.initFlow(binding);
+		this.initFlow(array);
 	}
 	$(window).on("resize",function(){
-		that.initFlow(binding);
+		that.initFlow(array);
 	});
 }
 
-flow.prototype.initFlow = function(binding){
+flow.prototype.initFlow = function(array){
 	var that = this;
 	that.pwidth = that.$el.outerWidth();
 	// console.log(this.$el[0].getBoundingClientRect());
@@ -108,7 +109,7 @@ flow.prototype.initFlow = function(binding){
 		var img = self.find('.rank-flow-img')[0];
 		var selfRow = Math.ceil(index/that.len);
 		self.width(that.cwidth);
-		if(!img.complete){
+		if(!img['complete']){
 			img.onload = function(){
 				if(that.imgcount == that.children.length-1){
 					that.$el.height(that.getParentHeight());

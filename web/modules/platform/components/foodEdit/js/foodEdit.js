@@ -9,32 +9,6 @@ import "web/common/components/editorComponent.vue"
 Vue.use(VuePagination);
 
 var editor;
-
-wangEditor.fn.destroy = function(isRemove){
-	var self = this;
-	var $valueContainer = self.$valueContainer;
-	var $editorContainer = self.$editorContainer;
-	var valueNodeName = self.valueNodeName;
-
-	if (valueNodeName === 'div') {
-		// div 生成的编辑器
-		$valueContainer.removeAttr('contenteditable');
-		$editorContainer.after($valueContainer);
-		$editorContainer.hide();
-	} else {
-		// textarea 生成的编辑器
-		if(!!isRemove){
-			//console.log($valueContainer);
-			//$valueContainer.show();
-			$editorContainer.remove();
-		}else{
-			$valueContainer.show();
-			$editorContainer.hide();
-		}
-	}
-}
-
-
 export default {
 	data:function(){
 		return {
@@ -85,10 +59,8 @@ export default {
 		this.addSteps();
 	},
 	mounted:function(){
-		Vue.http.post("http://localhost:3000/users",{entType:'1'}).then(function(res){ 	
-			console.log(res);
+		Vue.http.post("http://localhost:1090/node/users",{entType:'1'}).then(function(res){ 	
 		 },function(err){});
-		 console.log(this.$refs);
 	},
 	beforeDestroy:function(){
 	},
@@ -97,13 +69,11 @@ export default {
 			var that = this;
 			var stepsTmp = this.steps.slice(0,this.steps.length);
 			var tmpRef = $.extend(true,{},this.$refs);
-			console.log(tmpRef);
 			stepsTmp.map(function(val){
 				tmpRef[val.id].text = tmpRef[val.id][0].editor.getContent();
 				//that.html += val.text;
 			});
 			this.html = tmpRef.info.editor.getContent();
-			console.log(this.html,tmpRef);
 		},
 		format(){
 		},

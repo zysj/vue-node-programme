@@ -6,9 +6,9 @@ const routes=[
 		path:"/",name:'index',
 		component:routerConfig.webIndex,
 	},
-	{path:"/platform",name:'platform',components:
-		{default:routerConfig.platformSpace,
-		 header:routerConfig.platformheader,
+	{path:"/platform",name:'platform',
+		components:{default:routerConfig.platformSpace,
+		 header:routerConfig.platformheader
 		 //footer:routerConfig.platformfooter,
 		},
 		 children:[{

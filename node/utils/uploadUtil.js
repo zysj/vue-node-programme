@@ -28,7 +28,7 @@ function resType(fields,res,result){
 }
 
 function uploadFiles(req,res,next){
-
+    console.log(req.query,req.body);
     var reqMethod = req.method.toLowerCase();
     // ----------------------用 '/upload' 这个路由来处理文件上传----------------------
     if (req.baseUrl === '/upload/uploadImg' && (reqMethod === 'post' || reqMethod === 'options')) {
@@ -63,7 +63,7 @@ function uploadFiles(req,res,next){
             }
 
             console.log('formidable, form.parse ok');
-
+            console.log(fields);
             var item;
 
             // 计算 files 长度
@@ -75,10 +75,10 @@ function uploadFiles(req,res,next){
                 console.log("没有接收到任何上传文件");
                 return;
             }
-
+            
             for (item in files) {
                 var file = files[item];
-                console.log(file);
+                console.log(file.name);
                 // formidable 会将上传的文件存储为一个临时文件，现在获取这个文件的目录
                 var tempfilepath = file.path;
                 // 获取文件类型

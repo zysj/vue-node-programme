@@ -6,6 +6,8 @@
 <script>
 import Vue from 'vue'
 import umeditorConfig from '../configs/umeditorConfig.js'
+import umeditor from 'resources/lib/umeditor/umeditor.js'
+import 'resources/lib/umeditor/lang/zh-cn/zh-cn.js'
 
 export default Vue.component('vueEditor',{
     props:['wrapperClass','editorClass','editConfig','bindId'],

@@ -1,12 +1,13 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import VueRouter from "vue-router";
-import VueResource from "vue-resource";
-import routes from "web/common/router/vue-router";
-import jQuery from "web/resources/otherlib/jquery-vendors";
-import vueLoadingBar from 'vue2-loading-bar';
+import Vue from "vue"
+import Vuex from "vuex"
+import VueRouter from "vue-router"
+import VueResource from "vue-resource"
+import routes from "web/common/router/vue-router"
+import jQuery from "web/resources/otherlib/jquery-vendors"
+import vueLoadingBar from 'vue2-loading-bar'
 import comVue from 'web/modules/commonVue'
 import KeenUI from 'keen-ui'
+
 
 Vue.use(VueRouter);
 Vue.use(VueResource); 
@@ -20,7 +21,7 @@ var router =  new VueRouter({
 });
 
 var vue = new Vue({
-	router,
+	router:router,
 	data:{
 		errorDone:function(){
 

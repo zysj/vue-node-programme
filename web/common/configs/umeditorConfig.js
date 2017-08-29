@@ -3,8 +3,6 @@
  */
 import etpl from 'resources/lib/umeditor/third-party/template.min.js'
 import pathsUtil from '../utils/pathUtils.js'
-import umeditor from 'resources/lib/umeditor/umeditor.js'
-import 'resources/lib/umeditor/lang/zh-cn/zh-cn.js'
 import sysUtil from '../utils/sysUtil.js'
 
 window.etpl = etpl;
@@ -22,7 +20,7 @@ etpl.config({
 /**
  * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
  */
-export default UMEDITOR_CONFIG = {
+var UMEDITOR_CONFIG = window.UMEDITOR_CONFIG = {
 
 	//为编辑器实例添加一个路径，这个不能被注释
 	UMEDITOR_HOME_URL : pathsUtil.getBasePath()+'/web/resources/lib/umeditor/'
@@ -69,8 +67,8 @@ export default UMEDITOR_CONFIG = {
 
 	//语言配置项,默认是zh-cn。有需要的话也可以使用如下这样的方式来自动多语言切换，当然，前提条件是lang文件夹下存在对应的语言文件：
 	//lang值也可以通过自动获取 (navigator.language||navigator.browserLanguage ||navigator.userLanguage).toLowerCase()
-	,lang:"zh-cn"
-	,langPath:URL +"lang/"
+	//,lang:"zh-cn"
+	//,langPath:URL +"lang/"
 
 	//针对getAllHtml方法，会在对应的head标签中增加该编码设置。
 	,charset:"utf-8"
@@ -157,3 +155,5 @@ export default UMEDITOR_CONFIG = {
 		video:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'style', 'class', 'id']
 	}
 };
+
+export default UMEDITOR_CONFIG
