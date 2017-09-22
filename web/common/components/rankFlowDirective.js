@@ -65,8 +65,6 @@ flow.prototype.init = function(el,array){
 flow.prototype.initFlow = function(array){
 	var that = this;
 	that.pwidth = that.$el.outerWidth();
-	// console.log(this.$el[0].getBoundingClientRect());
-	// console.log(that.pwidth+" "+that.$el.parent().width());
 	that.len = 1;
 	var lenTmp;
 	while(true){
@@ -109,7 +107,7 @@ flow.prototype.initFlow = function(array){
 		var img = self.find('.rank-flow-img')[0];
 		var selfRow = Math.ceil(index/that.len);
 		self.width(that.cwidth);
-		if(!img['complete']){
+		if(img['complete'] === undefined || !img['complete']){
 			img.onload = function(){
 				if(that.imgcount == that.children.length-1){
 					that.$el.height(that.getParentHeight());
