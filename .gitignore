@@ -1,6 +1,7 @@
 ##ignore this file##
 /node_modules/
 /web/bundle/ 
+/node/uploads/ 
 .classpath
 .project
 .settings      
