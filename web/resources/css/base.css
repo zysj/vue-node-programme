@@ -1,7 +1,4 @@
 
-@import url('../lib/bootstrap/css/bootstrap.css');
-@import url('../lib/Font-Awesome/css/font-awesome.css');
-@import url('../lib/keen-ui/keen-ui.min.css');
 @import url('../lib/umeditor/themes/default/css/umeditor.min.css');
 
 #vue-app{
@@ -556,10 +553,14 @@ a{
 	-o-transition: all .8s ease;
 }
 #platform-head{
-	
+	position:fixed; 
+	width:100%;
+	height:60px;
+	top:0px;
+	left:0px;
+	z-index:1200;
 }
 #platform-head .navbar-default{
-	position:fixed; 
 	width:100%;
 	height:60px;
 	padding:5px 0px;
@@ -568,7 +569,7 @@ a{
 	border-bottom-color:#fff5e6;
 }
 #platform-head nav>div{
-	display: inline-block;
+	display: block;
 }
 #platform-head nav>div>div,#platform-head nav>div>ul{
 	float:left;
@@ -592,6 +593,7 @@ a{
 	position: relative;
 	width:auto;
 	height: 50px;
+	margin-top:5px;
 }
 nav>div .hd-icon img{
 	height:100%;
@@ -691,7 +693,7 @@ nav>div .hd-icon img{
 	color:#fff;
 	border-radius: 5px;
 	border:1px solid #fff;
-	margin:3px 10px;
+	margin:5px 10px;
 	font-weight: bold;
 	cursor:pointer;
 	transition: all .8s ease;

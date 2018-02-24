@@ -27,8 +27,8 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     // 按照filename的文件生成嵌入启动文件的模板文件
     new HtmlWebpackPlugin({
-      filename: 'vindex.html',
-      template: 'vindex.html',
+      filename: 'index.html',
+      template: 'index.html',
       inject: true
     }),
     new FriendlyErrorsPlugin()

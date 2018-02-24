@@ -17,6 +17,7 @@ global.$ =$;
 
 var uploadRoutes = require('./routes/upload');
 var routes = require('./routes/user');
+var accountRoutes = require('./routes/account');
 
 var systemUtil = require("./utils/systemUtil");
 systemUtil.setUnLog();
@@ -59,6 +60,9 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/upload', uploadRoutes);
+
+//用于简单汇区块链的成员企业的mock
+app.use('/api',accountRoutes);
 /*app.use('/post',routes);
 app.use('/reg', routes);
 app.use('/reg',  routes);

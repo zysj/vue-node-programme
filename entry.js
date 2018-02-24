@@ -7,6 +7,10 @@ import jQuery from "web/resources/otherlib/jquery-vendors"
 import vueLoadingBar from 'vue2-loading-bar'
 import comVue from 'web/modules/commonVue'
 import KeenUI from 'keen-ui'
+import 'font-awesome/css/font-awesome.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'keen-ui/dist/keen-ui.min.css'
+import 'web/resources/css/base.css'
 
 
 Vue.use(VueRouter);
